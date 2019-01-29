@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.EmployeeDAOImpl;
 import service.EmployeeService;
 import service.EmployeeServiceImpl;
 
@@ -19,6 +18,6 @@ public class EmployeeController extends HttpServlet {
     EmployeeService service = EmployeeServiceImpl.getInstance();   
 	protected void doGet(HttpServletRequest request, 
 				HttpServletResponse response) throws ServletException, IOException {
-	
+		request.getRequestDispatcher("/WEB-INF/view/employee/main.jsp").forward(request,response);
 	}
 }

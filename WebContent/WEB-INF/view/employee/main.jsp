@@ -1,55 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<%-- <%=application.getContextPath()%> --%>
-<link rel="stylesheet" href="${context}/resources/css/style.css "/>
-</head>
+<jsp:include page="../home/head.jsp"/>
 <body>
-	<table id="wrapper">
-		<tr>
-			<td colspan="2">
-				<jsp:include page="../home/header.jsp"/>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<jsp:include page="../home/post-navi-bar.jsp"/>
-			</td>
-		</tr>
-		<tr style="height: 300px">
-			<td id="side-menu">
-			<c:if test="${dest eq 'join-form'}">
-				<jsp:include page="side-join.jsp"/>
-			</c:if>
-			<jsp:include page="side-menu.jsp"/></jsp:include>
-			</td>
-			<td>
+		<div class="grid-container">
+		<div class="grid-item" id="item1">
+			<jsp:include page="../home/header.jsp" />
+		</div>
+		<div class="grid-item" id="item2">
 			<c:choose>
-				<c:when test="{dest eq 'NONE'}">
-					<%-- <jsp:include page=""/> --%>
+				<c:when test="${compo eq 'pre'}">
+					<jsp:include page="../home/pre-navi-bar.jsp" />
 				</c:when>
-				<c:when test="${dest eq 'join-form'}">
-				
-				</c:when>
-				<c:when test="${dest eq 'member-detail'}">
-					<jsp:include page="member-detail.jsp"/>
-				</c:when>
-				<c:when test="${dest eq 'member-update'}">
-					<jsp:include page="member-update.jsp"/>
-				</c:when>
+				<c:otherwise>
+					<jsp:include page="../home/post-navi-bar.jsp" />
+				</c:otherwise>
 			</c:choose>
-				</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-			<jsp:include page="../home/footer.jsp"/>
-			</td>
-		</tr>
-	</table>
+		</div>
+		<div class="grid-item" id="item3">로그인</div>
+		<div class="grid-item" id="item4">
+			<jsp:include page="side-menu.jsp" /></div>
+		<div class="grid-item" id="item5">
+			<c:choose>
+				<c:when test="${compo eq 'pre'}">
+					<jsp:include page="register.jsp" />
+				</c:when>
+				<c:otherwise>
+					<jsp:include page="access.jsp" />
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<div class="grid-item" id="item6">
+			<jsp:include page="../home/footer.jsp" />
+		</div>
+	</div>
 </body>
 </html>

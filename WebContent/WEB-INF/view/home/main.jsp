@@ -3,51 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="head.jsp" />
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.grid-container {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	background-color: #2196F3;
-	padding: 10px;
-}
 
-.grid-item {
-	background-color: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	font-size: 30px;
-	text-align: center;
-}
-
-#item1 {
-	grid-column-start: 1;
-	grid-column-end: 5;
-}
-
-#item2 {
-	grid-column-start: 1;
-	grid-column-end: 4;
-}
-
-#item3 {
-	font-size: 30px;
-}
-
-#item5 {
-	grid-column-start: 2;
-	grid-column-end: 5;
-}
-
-#item6 {
-	grid-column-start: 1;
-	grid-column-end: 5;
-	background-color: #2196F3;
-	border: 1px solid #2196F3;
-}
-</style>
-</head>
 <body>
 	<div class="grid-container">
 		<div class="grid-item" id="item1">
